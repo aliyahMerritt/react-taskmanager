@@ -18,6 +18,7 @@ const App = () => {
       getTasks()
     }, [])
 
+
   //Fetch Tasks
   const fetchTasks = async () => {
     const res = await fetch('http://localhost:5000/tasks')
@@ -41,7 +42,7 @@ const addTask = async (task) => {
     headers: {
     'Content-type': 'application/json'
     },
-    body: JSON.stringify(task)
+    body: JSON.stringify(task),
   })
 
   const data = await res.json()
@@ -51,6 +52,7 @@ const addTask = async (task) => {
   //const id = Math.floor(Math.random()* 1000) +1
   //const newTask = {id, ...task}
   //setTasks([...tasks, newTask])
+  
 }
 
 // Delete task
@@ -85,6 +87,7 @@ const deleteTask =async (id) => {
     )
   )
 }
+
 
 return (
   <Router>
